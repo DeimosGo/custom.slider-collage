@@ -8,8 +8,6 @@ import { SliderCollageProps } from './typings/images.types';
 const SliderCollage = ({ imageList }: SliderCollageProps) => {
   const [showSlider, setShowSlider] = React.useState(true);
   const [loadComponents, setLoadComponents] = React.useState(false);
-  const [loadingMobile, setLoadingMobile] = React.useState(true);
-  const [loadingDesktop, setLoadingDesktop] = React.useState(true);
 
   React.useEffect(() => {
     const initialWidth = window.innerWidth;
@@ -33,8 +31,6 @@ const SliderCollage = ({ imageList }: SliderCollageProps) => {
       {
         (!!imageList && !!showSlider && loadComponents) && (
           <Slider
-            loading={loadingMobile}
-            setLoading={setLoadingMobile}
             imageList={imageList}
           />
         )
@@ -42,8 +38,6 @@ const SliderCollage = ({ imageList }: SliderCollageProps) => {
       {
         (!!imageList && !showSlider && loadComponents) && (
           <Collage
-            loading={loadingDesktop}
-            setLoading={setLoadingDesktop}
             imageList={imageList}
           />
         )

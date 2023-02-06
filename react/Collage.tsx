@@ -1,21 +1,15 @@
 import React from 'react';
-import { ChildProps } from './typings/images.types';
-import { GridContainer, GridItem, ImageGrid, CollageContainer } from './styles/CollageStyles';
-import DesktopSkeleton from './LoadingComponents/DesktopSkeleton';
+import { SliderCollageProps } from './typings/images.types';
+import { GridItem } from './styles/CollageStyles';
+import collageStyles from './styles/Collage.css';
 
-const Collage = ({ imageList, loading, setLoading }: ChildProps) => {
-  const loaded = (index: number) => {
-    if (index == (imageList.length - 1)) {
-      setLoading(false);
-    }
-  };
+const Collage = ({ imageList }: SliderCollageProps) => {
   return (
-    <CollageContainer>
-      {!!loading && <DesktopSkeleton />}
-      <GridContainer>
+    <div className={collageStyles.collage__contaner}>
+      <div className={collageStyles.grid__container}>
         {
           !!imageList && (
-            imageList.map((item, index) => (
+            imageList.map((item) => (
               <GridItem
                 key={item.images.desktopImage}
                 colStart={item.images.position.gridColStart}
@@ -23,18 +17,18 @@ const Collage = ({ imageList, loading, setLoading }: ChildProps) => {
                 rowStart={item.images.position.gridRowStart}
                 rowEnd={item.images.position.gridRowEnd}>
                 <a href={item.images.imageUrl}>
-                  <ImageGrid
+                  <img
+                    className={collageStyles.grid__image}
                     src={item.images.desktopImage}
                     alt={item.images.altText}
-                    onLoad={() => loaded(index)}
                   />
                 </a>
               </GridItem>
             ))
           )
         }
-      </GridContainer>
-    </CollageContainer>
+      </div>
+    </div>
   );
 }
 

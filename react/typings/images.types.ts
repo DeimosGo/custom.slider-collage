@@ -21,10 +21,4 @@ type SliderCollageProps = {
   imageList: images[]
 }
 
-type ChildProps = {
-  imageList: images[],
-  loading: boolean,
-  setLoading: Function,
-}
-
-export { imageElement, images, SliderCollageProps, ChildProps };
+export { imageElement, images, SliderCollageProps };

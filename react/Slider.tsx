@@ -1,23 +1,15 @@
 import React from "react"
 import Glide from "@glidejs/glide";
 import glideStyles from "./styles/glide.core.min.css";
-import { ChildProps } from './typings/images.types';
-import { SliderItem } from './styles/SliderStyles';
-import MobileSkeleton from './LoadingComponents/MobileSkeleton';
+import { SliderCollageProps } from './typings/images.types';
 
-const Slider = ({ imageList, loading, setLoading }: ChildProps) => {
+const Slider = ({ imageList }: SliderCollageProps) => {
   const slider = new Glide('.footloose-custom-slider-collage-0-x-glide', {
-    gap: 18,
-    peek: 60,
+    gap: 0,
+    peek: 5,
     perView: 2,
     type: 'carousel'
   });
-
-  const loaded = (index: number) => {
-    if (index === (imageList.length - 1)) {
-      setLoading(false);
-    }
-  };
 
   React.useEffect(() => {
     slider.mount();
@@ -29,13 +21,12 @@ const Slider = ({ imageList, loading, setLoading }: ChildProps) => {
         <div className={glideStyles.glide__track} data-glide-el='track'>
           <ul className={glideStyles.glide__slides}>
             {
-              !!imageList && imageList.map((item, index) => (
+              !!imageList && imageList.map((item) => (
                 <li key={item.images.desktopImage}
                   className={glideStyles.glide__slide + ' ' + glideStyles.slider}>
                   <a className={glideStyles.slide__url} href={item.images.imageUrl}>
-                    <SliderItem
+                    <img className={glideStyles.slider__item__image}
                       src={item.images.mobileImage}
-                      onLoad={() => loaded(index)}
                       alt={item.images.altText} />
                   </a>
                 </li>
@@ -49,7 +40,7 @@ const Slider = ({ imageList, loading, setLoading }: ChildProps) => {
           <button className={glideStyles.glide__bullet} data-glide-dir="=2"></button>
           <button className={glideStyles.glide__bullet} data-glide-dir="=4"></button>
         </div>
-        {!!loading && <MobileSkeleton />}
+        {/*!!loading && <MobileSkeleton />*/}
       </div>
     </>
   )
