@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vw / 2.4);
+  /* min-height: calc(100vw / 2.4); */
   max-height: 812px;
   object-fit: cover;
   overflow: hidden;
@@ -19,9 +19,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  min-width: 70%;
+  /* min-width: 70%; */
   max-width: 1368px;
-  min-height: calc(100vw / 2.4);
+  /* min-height: calc(100vw / 2.4); */
   max-height: 812px;
   margin: 12px auto;
   box-sizing: border-box;
