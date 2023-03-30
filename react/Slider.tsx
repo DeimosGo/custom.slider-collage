@@ -4,7 +4,7 @@ import glideStyles from "./styles/glide.core.min.css";
 import { SliderCollageProps } from './typings/images.types';
 
 const Slider = ({ imageList }: SliderCollageProps) => {
-  const slider = new Glide('.footloose-custom-slider-collage-0-x-glide', {
+  const slider = new Glide('.slider-collage_slider', {
     gap: 0,
     peek: 5,
     perView: 2,
@@ -17,7 +17,7 @@ const Slider = ({ imageList }: SliderCollageProps) => {
 
   return (
     <>
-      <div className={glideStyles.glide}>
+      <div className={`${glideStyles.glide} slider-collage_slider`}>
         <div className={glideStyles.glide__track} data-glide-el='track'>
           <ul className={glideStyles.glide__slides}>
             {
