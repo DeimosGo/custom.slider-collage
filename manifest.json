@@ -1,7 +1,7 @@
 {
   "vendor": "passarelaqa",
   "name": "custom-slider-collage",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "title": "custom-slider-collage",
   "description": "A custom slider with a transition to a collage in mobile devices",
   "builders": {
