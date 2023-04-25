@@ -4,6 +4,7 @@ interface Props {
   rowEnd: number,
   colStart: number,
   colEnd: number,
+  rounded: boolean
 }
 
 const backAnimation = keyframes`
@@ -33,7 +34,7 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 overflow: hidden;
-border-radius: 8px;
+border-radius: ${props => props.rounded ? '8px' : 'none'};
 position: relative;
 transition: all .4s;
 animation: ${backAnimation} 2s linear infinite;

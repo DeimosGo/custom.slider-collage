@@ -1,5 +1,8 @@
 {
   "custom-slider-collage": {
     "component": "SliderCollage"
+  },
+  "custom-slider-collage-mothers": {
+    "component": "SliderCollageMother"
   }
 }
