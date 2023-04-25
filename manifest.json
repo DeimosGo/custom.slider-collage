@@ -1,7 +1,7 @@
 {
   "vendor": "footloose",
   "name": "custom-slider-collage",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "title": "custom-slider-collage",
   "description": "A custom slider with a transition to a collage in mobile devices",
   "builders": {
