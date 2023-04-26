@@ -4,10 +4,10 @@ import glideStyles from "../styles/glide.core.min.css";
 import { SliderCollageProps } from '../typings/images.types';
 
 const Slider = ({ imageList }: SliderCollageProps) => {
-  const slider = new Glide('.slider-collage_slider', {
+  const slider = new Glide('.slider-collage_mother', {
     gap: 0,
     peek: 5,
-    perView: 1.6,
+    perView: 1.55,
     type: 'carousel'
   });
 
@@ -17,7 +17,7 @@ const Slider = ({ imageList }: SliderCollageProps) => {
 
   return (
     <>
-      <div className={`${glideStyles.glide} slider-collage_slider`}>
+      <div className={`${glideStyles.glide} ${glideStyles.glide__mother} slider-collage_mother`}>
         <div className={glideStyles.glide__track} data-glide-el='track'>
           <ul className={glideStyles.glide__slides__mother}>
             {

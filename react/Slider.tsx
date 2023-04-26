@@ -36,9 +36,11 @@ const Slider = ({ imageList }: SliderCollageProps) => {
 
         </div>
         <div className={glideStyles.glide__bullets} data-glide-el="controls[nav]">
-          <button className={glideStyles.glide__bullet} data-glide-dir="=0"></button>
-          <button className={glideStyles.glide__bullet} data-glide-dir="=2"></button>
-          <button className={glideStyles.glide__bullet} data-glide-dir="=4"></button>
+          {
+            imageList.map((el, index) => (
+              <button key={el.images.altText} className={glideStyles.glide__bullet__mother} data-glide-dir={`=${index}}`}></button>
+            ))
+          }
         </div>
         {/*!!loading && <MobileSkeleton />*/}
       </div>
