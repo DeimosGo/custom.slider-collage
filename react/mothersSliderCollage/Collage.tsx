@@ -26,7 +26,7 @@ const Collage = ({ imageList }: SliderCollageProps) => {
                   />
                   <p style={
                     (index === 0)
-                      ? { fontSize: '50px' }
+                      ? { fontSize: '48px' }
                       : {}}>
                     {item.images.altText}
                   </p>
